@@ -31,17 +31,17 @@ function SmartDevice(name, operatingSystem) {
 
 SmartDevice.prototype = new Device();
 
-SmartDevice.prototype.getSystem = function(operatingSystem) {
-
-}
-
-const electricKettle = new HouseholdDevice('Electric Kettle');
+const kettle = new HouseholdDevice('Electric Kettle');
 const laptop = new SmartDevice('laptop', 'Windows');
 
-electricKettle.turnOn(true, electricKettle.name);
-electricKettle.getPower(1800, 2);
-console.log(laptop);
+console.log(kettle);
+kettle.turnOn(true, kettle.name);
+kettle.getPower(1800, 2);
+kettle.turnOn(false, kettle.name);
+console.log(kettle.type, kettle.ownType);
 
+console.log(laptop);
 laptop.turnOn(true, laptop.name);
 laptop.getPower(100, laptop.name);
+laptop.turnOn(false, laptop.name);
 console.log(laptop.type, laptop.ownType);
